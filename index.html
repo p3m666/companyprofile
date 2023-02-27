@@ -49,9 +49,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#Environments">Environments</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -107,41 +107,41 @@
                             </div>
                         
                             <div class="modal-body">
-                                <form>
+                                <form action="#" onsubmit="return myFunctionkkk()">
                                     <div class="form-group">
                                         <label>Identitas Nama Pemesan</label>
-                                        <input type="text" name="" class="form-control">
+                                        <input type="text" name="" id="identitas_nama" class="form-control">
                                     </div>
                                     <br>
                                     <div class="form-group">
                                         <label>Alamat Email Pemesan</label>
-                                        <input type="text" name="" class="form-control">
+                                        <input type="text" name="" id="email_pemesan" class="form-control">
                                     </div>
                                     <br>
                                     <div class="form-group">
                                         <label>Nomor Handphone Pemesan</label>
-                                        <input type="text" name="" class="form-control">
+                                        <input type="text" name="" id="telepon_pemesan" class="form-control">
                                     </div>
                                     <br>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" id="jenis_pemesan" aria-label="Default select example">
                                         <option selected>Jenis Aplikasi yang dipesan</option>
-                                        <option value="1">Website company profile</option>
-                                        <option value="2">Aplikasi berbasis web</option>
-                                        <option value="3">Aplikasi berbasis mobile</option>
-                                        <option value="4">Aplikasi berbasis desktop</option>
-                                        <option value="5">Bridging aplikasi sistem</option>
-                                        <option value="6">Program Skripsi</option>
-                                        <option value="7">Maintanance server</option>
-                                        <option value="8">Maintanance software</option>
-                                        <option value="9">--other---</option>
+                                        <option value="Website company profile">Website company profile</option>
+                                        <option value="Aplikasi berbasis web">Aplikasi berbasis web</option>
+                                        <option value="Aplikasi berbasis mobile">Aplikasi berbasis mobile</option>
+                                        <option value="Aplikasi berbasis desktop">Aplikasi berbasis desktop</option>
+                                        <option value="Bridging aplikasi sistem">Bridging aplikasi sistem</option>
+                                        <option value="Program Skripsi">Program Skripsi</option>
+                                        <option value="Maintanance Server">Maintanance Server</option>
+                                        <option value="Maintanance software">Maintanance software</option>
+                                        <option value="--other---">--other---</option>
                                       </select>
                                     </div>
-                                     </form>
-                                     <div class="modal-footer">
+                                    <div class="modal-footer">
                                         <button type="submit" class="btn btn-success">SUBMIT</button>
                                         <button type="reset" class="btn btn-danger">RESET</button>
-                                     </div>
-                                 </div>
+                                    </div>
+                                </div>
+                            </form>
                                  
                              </div>
                         </div>
@@ -340,7 +340,7 @@
         <!-- Akhir portfolio -->
 
         <!-- Contact -->
-        <section id="contact">
+        <!-- <section id="contact">
             <div class="container">
                 <div class="row text-center mb-3">
                     <div class="btn-notif d-none border-0 alert text-start alert-success alert-dismissible fade show" style="border-radius: 10px; background-color: #7fff00" role="alert">
@@ -389,7 +389,7 @@
                     d="M0,160L48,154.7C96,149,192,139,288,154.7C384,171,480,213,576,224C672,235,768,213,864,202.7C960,192,1056,192,1152,186.7C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                 ></path>
             </svg>
-        </section>
+        </section> -->
         <!-- Akhir Contact -->
 
         <footer class="pb-5" style="background-color: #a4b0be">
@@ -462,7 +462,26 @@
                 // glare: true,
             });
         </script>
+ <script>
+    function myFunctionkkk() {
+        let nama = document.querySelector('#identitas_nama').value;
+        let email = document.querySelector('#email_pemesan').value;
+        let hp = document.querySelector('#telepon_pemesan').value;
+        let jenis = document.querySelector('#jenis_pemesan').value;
 
+        let text = `
+        Nama : ${nama}%0A
+        Email : ${email}%0A
+        HP : ${hp}%0A
+        jenis : ${jenis}
+        `
+        let send = 'https://wa.me/081738209?text='+text;
+        window.open(send,'_self');
+        return false;
+        
+    }
+    
+ </script>
         <script src="script.js"></script>
     </body>
 </html>
